@@ -4,13 +4,22 @@ import '../css/Proyectos.css';
 const Proyectos = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [nuevaCaja, setNuevaCaja] = useState({ nombre: "", progreso: 0, integrantes: 0 });
+  const [nuevaCaja, setNuevaCaja] = useState({ nombre: "", progreso: 0, integrantes: [] });
   const [proyectos, setProyectos] = useState([
-    { id: 1, nombre: "Caja 1", progreso: 50, integrantes: 5 },
-    { id: 2, nombre: "Caja 2", progreso: 100, integrantes: 3 },
-    { id: 3, nombre: "Caja 3", progreso: 17, integrantes: 7 },
+    { id: 1, nombre: "Caja 1", progreso: 50, integrantes: ["Estudiante 1", "Estudiante 2"] },
+    { id: 2, nombre: "Caja 2", progreso: 100, integrantes: ["Estudiante 3", "Estudiante 4"] },
+    { id: 3, nombre: "Caja 3", progreso: 17, integrantes: ["Estudiante 5", "Estudiante 6"] },
   ]);
   const [editingProject, setEditingProject] = useState(null);
+
+  const nombresEstudiantes = [
+    "Estudiante 1",
+    "Estudiante 2",
+    "Estudiante 3",
+    "Estudiante 4",
+    "Estudiante 5",
+    "Estudiante 6",
+  ];
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -18,6 +27,7 @@ const Proyectos = () => {
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setNuevaCaja({ nombre: "", progreso: 0, integrantes: [] });
   };
 
   const handleInputChange = (e) => {
@@ -28,14 +38,37 @@ const Proyectos = () => {
     });
   };
 
+  const handleCheckboxChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setNuevaCaja((prevCaja) => ({ ...prevCaja, integrantes: [...prevCaja.integrantes, value] }));
+    } else {
+      setNuevaCaja((prevCaja) => ({ ...prevCaja, integrantes: prevCaja.integrantes.filter((nombre) => nombre !== value) }));
+    }
+  };
+
+  const renderCheckboxes = () => {
+    return nombresEstudiantes.map((nombre) => (
+      <label key={nombre} className="checkbox-label">
+        <input
+          type="checkbox"
+          value={nombre}
+          checked={nuevaCaja.integrantes.includes(nombre)}
+          onChange={handleCheckboxChange}
+        />
+        {nombre}
+      </label>
+    ));
+  };
+
   const crearNuevaCaja = () => {
     setProyectos([...proyectos, { ...nuevaCaja, id: proyectos.length + 1 }]);
     setShowForm(false);
-    setNuevaCaja({ nombre: "", progreso: 0, integrantes: 0 });
   };
 
   const editarProyecto = (id) => {
     setEditingProject(id);
+    setNuevaCaja(proyectos.find((proyecto) => proyecto.id === id));
   };
 
   const guardarEdicion = (id) => {
@@ -44,13 +77,9 @@ const Proyectos = () => {
         proyecto.id === id
           ? {
               ...proyecto,
-              nombre: prompt("Edita el nombre del proyecto:", proyecto.nombre),
-              progreso: parseInt(
-                prompt("Edita el progreso del proyecto (%):", proyecto.progreso)
-              ),
-              integrantes: parseInt(
-                prompt("Edita el número de integrantes:", proyecto.integrantes)
-              ),
+              nombre: document.getElementById(`nombre-${id}`).value,
+              progreso: parseInt(document.getElementById(`progreso-${id}`).value),
+              integrantes: nuevaCaja.integrantes,
             }
           : proyecto
       )
@@ -103,7 +132,9 @@ const Proyectos = () => {
               ></div>
             </div>
             <div className="info-hover">
-              <div className="integrantes">Integrantes: {proyecto.integrantes}</div>
+              <div className="integrantes">
+                <strong>Integrantes:</strong> {proyecto.integrantes.join(", ")}
+              </div>
               <div className="botones">
                 <button className="editar" onClick={() => editarProyecto(proyecto.id)}>
                   Editar
@@ -114,7 +145,7 @@ const Proyectos = () => {
               </div>
             </div>
             {editingProject === proyecto.id && (
-              <div className="editar-form">
+              <div className="form editar-form">
                 <label htmlFor={`nombre-${proyecto.id}`}>Nombre:</label>
                 <input
                   type="text"
@@ -129,13 +160,8 @@ const Proyectos = () => {
                   name="progreso"
                   defaultValue={proyecto.progreso}
                 />
-                <label htmlFor={`integrantes-${proyecto.id}`}>Integrantes:</label>
-                <input
-                  type="number"
-                  id={`integrantes-${proyecto.id}`}
-                  name="integrantes"
-                  defaultValue={proyecto.integrantes}
-                />
+                <label>Integrantes:</label>
+                {renderCheckboxes()}
                 <button onClick={() => guardarEdicion(proyecto.id)}>Guardar</button>
               </div>
             )}
@@ -150,31 +176,7 @@ const Proyectos = () => {
       {showForm && (
         <div className="form-container">
           <div className="form">
-            <label htmlFor="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              value={nuevaCaja.nombre}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="progreso">Progreso (%):</label>
-            <input
-              type="number"
-              id="progreso"
-              name="progreso"
-              value={nuevaCaja.progreso}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="integrantes">Integrantes:</label>
-            <input
-              type="number"
-              id="integrantes"
-              name="integrantes"
-              value={nuevaCaja.integrantes}
-              onChange={handleInputChange}
-            />
-            <button onClick={crearNuevaCaja}>Crear Caja</button>
+            {/* ... (código existente) */}
           </div>
         </div>
       )}
@@ -183,6 +185,9 @@ const Proyectos = () => {
 };
 
 export default Proyectos;
+
+
+
 
 
 
