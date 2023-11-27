@@ -1,1 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #FFFFFF;
+}
+h1,h2{
+  text-align: center;
+}
+h1{font-size: 2rem;}
+.contenedor_flex{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.columna1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.columna1 img{
+  width: 60%;
+}
+.f_log_in{
+  padding: 1.8rem;
+  border: 2px solid rgba(161,46,252,1);
+  border-radius: 20px;
+  margin: 10% auto;
+  width: fit-content;
+  height: 500px;
+  overflow: hidden;
+}
+.f_log_in form{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.campo{
+  position: relative;
+  margin-top: 20px;
+  margin: 40px auto;
+}
+.input_svg{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: -10px;
+}
+input{
+  width: 90%;
+  color: #FFFFFF;
+  z-index: 10;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+.label{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.texto_input {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  transition: transform 0.3s ease-out; /* Agrega una transición suave */
+}
+input:focus + .label .texto_input,
+input:valid + .label .texto_input{
+  transform: translateY(-200%);
+}
+input:focus{outline: none;}
+
+.botones_log{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.botones_log .log_in_boton img{
+  width: 45px;
+}
+.botones_log{position: relative;}
+.botones_log a{
+  color: #FFFFFF;
+  padding: 5px;
+}
+.botones_log .log_in_boton{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.botones_log .log_in_boton{
+  background: none;
+  padding: 0 10px;
+  transition: background 0.5s ease;
+}
+.botones_log .log_in_boton p{
+  opacity: 0;
+  width: 0px;
+  transition: width 0.5s linear;
+  transition: opacity 0.5s ease;
+}
+.botones_log .log_in_boton:hover{
+  background: radial-gradient(circle, rgba(161,46,255,1) 0%, rgba(24,39,217,1) 100%);
+  border-radius: 50px;
+}
+.botones_log .log_in_boton:hover p{
+  width: 50%;
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .contenedor_flex{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+  }
+  .columna1{
+    width: 40%;
+  }
+  .columna1 img{
+    width: 100%;
+  }
+  .columna2{
+    width: 60%;
+  }
+}
