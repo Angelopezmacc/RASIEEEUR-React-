@@ -2,6 +2,7 @@ import './App.css'
 import input from '../public/img/input.svg'
 import log_in_button from '../public/img/bx-right-arrow-alt.svg'
 import logo from '../public/img/RASIEEE.png'
+import Registro from './Registro.jsx'
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
         </div>
         </div>
     </div>
+    <Registro />
     </>
   )
 }

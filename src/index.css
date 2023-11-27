@@ -119,7 +119,18 @@ input:focus{outline: none;}
   width: 50%;
   opacity: 1;
 }
-
+/*---------------------------------------------------------------------------------------------------*/
+.registro_contenedor{
+  width: fit-content;
+  margin: auto;
+}
+.formulario_registro{
+  padding: 10px;
+}
+.formulario_registro .f_registro_p1 .campo,
+.formulario_registro .f_registro_p2 .campo{
+  margin-bottom: 100px;
+}
 @media (min-width: 1024px) {
   .contenedor_flex{
     flex-direction: row;
@@ -128,13 +139,36 @@ input:focus{outline: none;}
     width: 80%;
     margin: auto;
   }
-  .columna1{
-    width: 40%;
-  }
-  .columna1 img{
+  .columna1{width: 40%;}
+  .columna1 img{width: 100%;}
+  .columna2{width: 60%;}
+
+  .registro_contenedor{
     width: 100%;
+    margin: auto;
   }
-  .columna2{
-    width: 60%;
+  .formulario_registro{
+    display: flex;
+    justify-content: space-around;
+  }
+  .f_registro_p1, .f_registro_p2{width: 30%;}
+
+  .f_registro_p1 input, .f_registro_p2 input{
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  .f_registro_p1 .label, .f_registro_p2 .label{
+    position: absolute;
+    font-size: 2rem;
+    top: -10px;
+    left: 10px;
+  }
+  .f_registro_p1 .input_svg, .f_registro_p2 .input_svg{
+    top: -20px;
+    left: -10px;
+  }
+  input:focus + .label .texto_input,
+  input:valid + .label .texto_input{
+    transform: translateY(-100%);
   }
 }
