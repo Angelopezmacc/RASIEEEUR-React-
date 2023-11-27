@@ -72,7 +72,7 @@ body {
   
   .proyecto {
     height: 200px;
-    background-color: #800080; /* Morado */
+    background-color: #800080; 
     border: 1px solid #ccc;
     border-radius: 10px;
     perspective: 1000px;
@@ -174,7 +174,7 @@ body {
     height: 40px;
     border: none;
     border-radius: 10px;
-    background-color: #00ffff; /* Cyan */
+    background-color: #00ffff; 
     font-size: 18px;
     cursor: pointer;
   }
@@ -226,7 +226,7 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #00ff00; /* Verde */
+    background-color: #00ff00; 
     color: #fff;
     cursor: pointer;
   }
@@ -268,8 +268,6 @@ body {
     z-index: 1000;
   }
 
-/* ... (código existente) */
-
 /* Responsividad para pantallas más pequeñas (máximo 768px) */
 @media (max-width: 768px) {
   .proyectos {
@@ -284,154 +282,3 @@ body {
   
 
 
-
-/* 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.menu-icon {
-  font-size: 18px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.titulo {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.user-icon {
-  font-size: 18px;
-  margin-right: 10px;
-}
-
-.menu {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #f0f0f0;
-  border-right: 1px solid #e0e0e0;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.menu.open {
-  transform: translateX(0);
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu li {
-  height: 40px;
-  line-height: 40px;
-  padding-left: 20px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.proyectos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  margin: 20px 0;
-}
-
-.proyecto {
-  height: 200px;
-  background-color: #000000;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  perspective: 1000px;
-}
-
-.proyecto:hover {
-  transform: rotateY(20deg);
-}
-
-.nombre {
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  background-color: #e0e0e0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.progreso {
-  height: 20px;
-  margin: 10px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.barra {
-  height: 100%;
-  background-color: #00ff00;
-}
-
-.botones {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  width: 80px;
-  height: 40px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.editar {
-  background-color: #ffff00;
-}
-
-.borrar {
-  background-color: #ff0000;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.nuevo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boton-crear {
-  width: 80px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: #00ffff;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.boton-crear:hover {
-  opacity: 0.8;
-} */

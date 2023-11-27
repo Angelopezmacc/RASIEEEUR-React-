@@ -1,0 +1,138 @@
+/* Hoja de estilos Index */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden; 
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #ff0066; 
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; 
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+  
+  .navbar li {
+    margin: 10px 0; 
+    position: relative;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 18px; 
+    position: relative;
+  }
+  
+  .navbar a:hover::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #ff0066; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Barra horizontal del navbar */
+  .navbar-line img {
+    width: 100%;
+    height: 2px;
+    background-color: #ff0066;
+  }
+  
+  /* Secciones */
+  .section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section h2 {
+    margin: 0;
+    font-size: 24px; 
+  }
+  
+  /* Imagen de la empresa */
+  .company-image {
+    width: 70%;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  .company-image img {
+    width: 80%; 
+    height: auto;
+  }
+  
+  /* Barra de desplazamiento */
+  .scroll-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-color: #222;
+    z-index: 1000;
+  }
+  
+  .scroll-bar img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Botón para volver al inicio */
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0066; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+  }
+  
+  .back-to-top:hover {
+    background-color: #d40052; 
+  }
+  
+  /* Consulta de medios para dispositivos con un ancho de pantalla de 768px o más */
+  @media (min-width: 768px) {
+    .navbar ul {
+      flex-direction: row; 
+      align-items: center; 
+    }
+  
+    .navbar li {
+      margin: 0 20px; 
+    }
+  }
+  
+  /* Resalta el texto de la sección en la que se está */
+  .navbar a.active {
+    color: #2100b6;
+  }
+  
