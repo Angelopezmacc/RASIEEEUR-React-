@@ -4,6 +4,7 @@ import log_in_button from '../public/img/bx-right-arrow-alt.svg'
 import logo from '../public/img/RASIEEE.png'
 import Registro from './Registro.jsx'
 import LogIn from './LogIn.jsx'
+import AdminUsers from './AdminUsers.jsx'
 import { Route } from 'react-router'
 import { Routes } from 'react-router'
 
@@ -13,7 +14,8 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={<LogIn/>}></Route>
+      <Route path='/login' element={<LogIn/>}></Route>
+      <Route path='/adminusers' element={<AdminUsers/>}></Route>
       <Route path='/registro' element={<Registro/>}></Route>
     </Routes>
     </>

@@ -131,6 +131,79 @@ input:focus{outline: none;}
 .formulario_registro .f_registro_p2 .campo{
   margin-bottom: 100px;
 }
+/*---------------------------------------------------*/
+table{
+  margin: auto;
+  margin-bottom: 100px;
+  font-size: 20pt;
+}
+th{
+  border-bottom: 2px solid #FFF;
+  padding: 20px;
+}
+td{
+  border-right: 2px solid #FFF;
+  padding: 20px;
+}
+.actions img{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+.no_border{
+  border: none;
+}
+.admin_actions{
+  width: 50%;
+  margin: auto;
+  padding: 50px;
+}
+.blue_button{
+  background-color: #1C72FC;
+  margin-left: 50px;
+  width: 250px;
+  padding: 10px;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 20pt;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.blue_button p{
+  float: left;
+  margin-top: 10px;
+}
+.blue_button img{
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+.blue_button a{
+  color: #FFFFFF;
+}
+.purple_button{
+  background-color: #AD34EE;
+  margin-left: 50px;
+  width:280px;
+  padding: 10px;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 20pt;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.purple_button p{
+  float: left;
+  margin-top: 10px;
+}
+.purple_button img{
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+.purple_button a{color: #FFFFFF;}
 @media (min-width: 1024px) {
   .contenedor_flex{
     flex-direction: row;
@@ -154,17 +227,37 @@ input:focus{outline: none;}
   .f_registro_p1, .f_registro_p2{width: 30%;}
 
   .f_registro_p1 input, .f_registro_p2 input{
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 0 1rem;
   }
   .f_registro_p1 .label, .f_registro_p2 .label{
     position: absolute;
-    font-size: 2rem;
+    font-size: 1.5rem;
     top: -10px;
     left: 10px;
   }
   .f_registro_p1 .input_svg, .f_registro_p2 .input_svg{
-    top: -20px;
+    width: 100%;
+    top: -14px;
+    left: -10px;
+  }
+  input:focus + .label .texto_input,
+  input:valid + .label .texto_input{
+    transform: translateY(-100%);
+  }
+}
+
+@media (min-width: 1500px) {
+  
+  .f_registro_p1 .label, .f_registro_p2 .label{
+    position: absolute;
+    font-size: 1.5rem;
+    top: -10px;
+    left: 10px;
+  }
+  .f_registro_p1 .input_svg, .f_registro_p2 .input_svg{
+    width: 100%;
+    top: -30px;
     left: -10px;
   }
   input:focus + .label .texto_input,
