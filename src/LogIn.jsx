@@ -30,8 +30,10 @@ function LogIn() {
             <div className='botones_log'>
               <a href="../add_user.html" className='olvide_contraseña'>Olvide mi contraseña</a>
               <div className='log_in_boton'>
-                <img src={log_in_button} alt="" />
-                <p>Entrar</p>
+                <a href="/AdminUsers">
+                  <img src={log_in_button} alt="" />
+                  <p>Entrar</p>
+                </a>
               </div>
             </div>
         </div>

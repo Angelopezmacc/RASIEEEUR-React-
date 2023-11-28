@@ -131,24 +131,75 @@ input:focus{outline: none;}
 .formulario_registro .f_registro_p2 .campo{
   margin-bottom: 100px;
 }
+.boton_registro{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  color: #FFF;
+  border-radius: 12px;
+  background-color: #CF353F;
+  border: none;
+  box-shadow: 10px 11px 8px -6px rgba(167,5,16,0.41);
+  transition: box-shadow 0.3s linear;
+  transition: background-color 0.5s linear;
+}
+.boton_registro img{
+  width: 4rem
+}
+.boton_registro:hover{
+  box-shadow: 0px -3px 32px 5px rgba(167,5,16,0.3);
+  background-color: #FE7F87;
+}
+.return_button{
+  background-color: #000;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  align-items: center;
+  display: flex;
+}
+
+.return_button img{
+  width: 4rem;
+}
+.return_button p{
+  opacity: 0;
+  width: 0;
+  transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.return_button:hover p{
+  opacity: 1;
+  width: auto;
+}
 /*---------------------------------------------------*/
 table{
   margin: auto;
   margin-bottom: 100px;
-  font-size: 20pt;
+  font-size: 1.5rem;
+  text-transform: capitalize;
 }
 th{
   border-bottom: 2px solid #FFF;
-  padding: 20px;
+  padding: 1.25rem;
 }
 td{
   border-right: 2px solid #FFF;
-  padding: 20px;
+  padding: 1.25rem;
+}
+.actions button{
+  background-color: #000;
+  cursor: pointer;
+  border: none;
 }
 .actions img{
   width: 50px;
   height: 50px;
-  margin-left: 10px;
+  margin-left: .625rem;
+  background-color: #000;
 }
 .no_border{
   border: none;
@@ -156,28 +207,32 @@ td{
 .admin_actions{
   width: 50%;
   margin: auto;
-  padding: 50px;
+  padding: 10%;
 }
 .blue_button{
   background-color: #1C72FC;
   margin-left: 50px;
-  width: 250px;
-  padding: 10px;
   color: #FFF;
   font-weight: 600;
   font-size: 20pt;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  width: 30%;
+}
+.blue_button a, .purple_button a{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
 }
 .blue_button p{
-  float: left;
-  margin-top: 10px;
+  width: 60%;
 }
 .blue_button img{
-  float: right;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 .blue_button a{
   color: #FFFFFF;
@@ -185,8 +240,7 @@ td{
 .purple_button{
   background-color: #AD34EE;
   margin-left: 50px;
-  width:280px;
-  padding: 10px;
+  width:30%;
   color: #FFF;
   font-weight: 600;
   font-size: 20pt;
@@ -194,16 +248,13 @@ td{
   border: none;
   cursor: pointer;
 }
-.purple_button p{
-  float: left;
-  margin-top: 10px;
-}
 .purple_button img{
-  float: right;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 .purple_button a{color: #FFFFFF;}
+
+
 @media (min-width: 1024px) {
   .contenedor_flex{
     flex-direction: row;
