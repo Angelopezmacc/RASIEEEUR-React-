@@ -4,6 +4,7 @@ import download_icon from '../public/img/bx-download.svg'
 import trash_icon from '../public/img/bx-trash.svg'
 import edit_icon from '../public/img/bxs-edit.svg'
 import plus_icon from '../public/img/bx-plus-circle.svg'
+import left_icon from '../public/img/bx-left-arrow-alt.svg'
 import Swal from 'sweetalert2'
 import { useLinkClickHandler } from 'react-router-dom'
 
@@ -14,8 +15,15 @@ function AdminUsers() {
         icon: "question"
         });
     }
+    const signout = () => {
+        window.location.href = '/login';
+    }
   return (
     <>
+    <button className='return_button' onClick={signout}>
+        <img src={left_icon} alt="" />
+        <p>Signout</p>
+    </button>
     <h1>Panel de manejo de usuarios</h1>
 <table>
         <tr>

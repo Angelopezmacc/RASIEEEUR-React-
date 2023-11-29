@@ -1,31 +1,48 @@
 import './index.css'
 import input from '../public/img/input.svg'
-import Btn from './Botonenviar.jsx'
 import plus_icon from '../public/img/bx-plus-circle.svg'
 import left_icon from '../public/img/bx-left-arrow-alt.svg'
+import Swal from 'sweetalert2'
+import { useState } from 'react'
+
 
 function Registro() {
-    const nombre_persona = document.querySelector('#name_int')
-    const email_persona = document.querySelector('#email_int')
-    const telefono_persona = document.querySelector('#telefono_int')
-    const programa_persona = document.querySelector('#programa_int')
-    const contrasena_persona = document.querySelector('#contrasena_int')
-    const datos = {
-        nombre: '',
-        email: '',
-        telefono: '',
-        programa: '',
-        contrasena: ''
-    }       
+    const [nombre, setNombre] = useState('');
+    const [correo, setCorreo] = useState('');
+    const [telefono, setTelefono] = useState('');
+    const [programa, setPrograma] = useState('');
+    const [contraseña, setContraseña] = useState('');
+
+    const alerta = () =>{
+        Swal.fire({
+            title: "Estas seguro?",
+            text: "la información que proporcionaste no se guardara",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#8E8E8E",
+            confirmButtonText: "Salir",
+            cancelButtonText: "Quedarme",
+            preConfirm: () =>{
+                window.location.href = '/AdminUsers';
+            }
+          });
+    }  
     return (
     <>
-    <button className='return_button'>
+    <button className='return_button' onClick={alerta}>
         <img src={left_icon} alt="" />
         <p>Regresar</p>
     </button>
     <div className='registro_contenedor'>
     <h1>Registro de usuarios</h1>
-    <form action="" className='formulario_registro'>
+    <form action="" className='formulario_registro' onSubmit={dato =>{
+        dato.preventDefault()
+        setNombre(dato.target.nombre.value)
+        setCorreo(dato.target.correo.value)  
+        setTelefono(dato.target.telefono.value)  
+        setPrograma(dato.target.programa.value)  
+        setContraseña(dato.target.contraseña.value)    
+    }}>
         <div className="f_registro_p1">
                 <div className="campo">
                     <input type="text" name="nombre" id="name_int" required />
@@ -60,7 +77,7 @@ function Registro() {
                 </div>
 
                 <div>
-                    <button className="boton_registro">
+                    <button className="boton_registro" type='submit'>
                         <p>Registrar</p>
                         <img src={plus_icon} alt=""/>
                     </button>
