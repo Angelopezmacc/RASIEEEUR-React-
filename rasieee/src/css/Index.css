@@ -124,6 +124,9 @@ nav{
 
 .hScroll_block:nth-child(2) .background {
     background-image: linear-gradient(to left,#0022FF 2%, #02107E,#030531, #020219 , #000);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .hScroll_block:nth-child(3) .background {
@@ -135,13 +138,15 @@ nav{
 
 .hScroll_block:nth-child(4) .background {
     background: #000947;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .hScroll_block:nth-child(5) .background {
     background-image: linear-gradient(to right, #000947, #000);
-    display: flex;
-    align-items: center;
-    justify-content: left;
+
+
 }
 
 .hScroll_block:nth-child(6) .background {
@@ -160,6 +165,28 @@ section.hScroll .hScroll_block .background{
     height: 0;
 }
 
+.invita{
+    max-width: 50%;
+    max-height: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.preg, .tx1{
+    color: #fff;
+    margin: 5% 0;
+}
+
+.preg{
+    text-shadow: 0px 5px 10px #0022FF, 0px -5px 10px #0022FF, 5px 0px 10px #0022FF, -5px 0px 10px #0022FF ;
+}
+
+.tx1{
+    font-size:x-large;
+    width:50%;
+}
+
 .inpage button{    
     cursor: pointer;
     background-color: transparent;
@@ -169,6 +196,18 @@ section.hScroll .hScroll_block .background{
     text-shadow: 0px 5px 10px red, 0px -5px 10px red, 5px 0px 10px red, -5px 0px 10px red;
     font-size: 18px;
     position: relative;
+}
+
+.carusel1{
+    margin: 5% 5%;
+    max-width: 30%;
+    height: auto;
+}
+
+.carusel2{
+    width: 50%;
+    height: 50%;
+    margin: 5% 5%;
 }
 
 .inpage button:hover::after {
