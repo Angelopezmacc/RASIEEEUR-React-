@@ -5,6 +5,7 @@ import logo from '../public/img/RASIEEE.png'
 import Registro from './Registro.jsx'
 import LogIn from './LogIn.jsx'
 import AdminUsers from './AdminUsers.jsx'
+import Editar from './Edicion.jsx'
 import { Route } from 'react-router'
 import { Routes } from 'react-router'
 
@@ -17,6 +18,7 @@ function App() {
       <Route path='/login' element={<LogIn/>}></Route>
       <Route path='/adminusers' element={<AdminUsers/>}></Route>
       <Route path='/registro' element={<Registro/>}></Route>
+      <Route path='/Editar' element={<Editar/>}></Route>
     </Routes>
     </>
   )

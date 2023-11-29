@@ -18,6 +18,9 @@ function AdminUsers() {
     const signout = () => {
         window.location.href = '/login';
     }
+    const editar = ()=>{
+        window.location.href = '/editar';
+    }
   return (
     <>
     <button className='return_button' onClick={signout}>
@@ -39,7 +42,7 @@ function AdminUsers() {
             <td>juan@correo.com</td>
             <td className="no_border actions">
                 <button onClick={handleClick}><img src={trash_icon} alt=""/></button>
-                <button><img src={edit_icon} alt=""/></button>
+                <button onClick={editar}><img src={edit_icon} alt=""/></button>
             </td>
         </tr>
 
@@ -49,7 +52,7 @@ function AdminUsers() {
             <td>gallego@prueba.com</td>
             <td className="no_border actions">
                 <button onClick={handleClick}><img src={trash_icon} alt=""/></button>
-                <button><img src={edit_icon} alt=""/></button>
+                <button onClick={editar}><img src={edit_icon} alt=""/></button>
             </td>
         </tr>
 
@@ -59,7 +62,7 @@ function AdminUsers() {
             <td>ino@prueba.com</td>
             <td className="no_border actions">
                 <button onClick={handleClick}><img src={trash_icon} alt=""/></button>
-                <button><img src={edit_icon} alt=""/></button>
+                <button onClick={editar}><img src={edit_icon} alt=""/></button>
             </td>
         </tr>
     </table>
