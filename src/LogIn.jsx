@@ -28,7 +28,7 @@ function LogIn() {
       window.location.href = '/';
     }
     const entrar = () =>{
-      window.location.href = '/adminusers';
+      window.location.href = '/Proyectos';
     }
 
   return (

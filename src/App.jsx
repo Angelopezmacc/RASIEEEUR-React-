@@ -7,6 +7,7 @@ import LogIn from './LogIn.jsx'
 import AdminUsers from './AdminUsers.jsx'
 import Inicio from './Index.jsx'
 import Editar from './Edicion.jsx'
+import Proyectos from './Proyectos.jsx'
 import { Route } from 'react-router'
 import { Routes } from 'react-router'
 
@@ -21,6 +22,7 @@ function App() {
       <Route path='/adminusers' element={<AdminUsers/>}></Route>
       <Route path='/registro' element={<Registro/>}></Route>
       <Route path='/Editar' element={<Editar/>}></Route>
+      <Route path='/Proyectos' element={<Proyectos/>}></Route>
     </Routes>
     </>
   )

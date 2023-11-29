@@ -16,7 +16,7 @@ function AdminUsers() {
         });
     }
     const signout = () => {
-        window.location.href = '/login';
+        window.location.href = '/Proyectos';
     }
     const editar = ()=>{
         window.location.href = '/editar';
