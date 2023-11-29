@@ -135,10 +135,10 @@ const handleClick3 = () => {
             Inicio
           </button>
           <button className="bt1" onClick={handleClick1}>
-            Nuestro Equipo
+            Nosotros
           </button>
           <button className="bt1" onClick={handleClick2}>
-            Quieres Unirte
+            Únete
           </button>
           <button className="bt1" onClick={handleClick3}>
             Proyectos

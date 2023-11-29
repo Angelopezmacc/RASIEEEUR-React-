@@ -539,15 +539,16 @@ section.hScroll .hScroll_block .background{
 }
 
 .carusel1{
-  margin: 5% 5%;
-  max-width: 30%;
+  margin: 10% 5%;
+  max-width: 24%;
   height: auto;
 }
 
 .carusel2{
-  width: 50%;
-  height: 50%;
+  max-width: 40%;
+  height: auto;
   margin: 5% 5%;
+  float: left;
 }
 
 .bt1:hover::after {
