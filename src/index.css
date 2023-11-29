@@ -90,32 +90,39 @@ input:focus{outline: none;}
   width: 45px;
 }
 .botones_log{position: relative;}
-.botones_log a{
-  color: #FFFFFF;
-  padding: 5px;
-}
-.botones_log .log_in_boton{
+
+form .log_in_boton{
   cursor: pointer;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
 }
-.botones_log .log_in_boton{
+form .log_in_boton button{
   background: none;
   padding: 0 10px;
   transition: background 0.5s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.botones_log .log_in_boton p{
+form .log_in_boton a{
+  color: #FFF;
+}
+form .log_in_boton button p{
   opacity: 0;
   width: 0px;
   transition: width 0.5s linear;
   transition: opacity 0.5s ease;
+  color: #FFF;
 }
-.botones_log .log_in_boton:hover{
+form .log_in_boton button:hover{
   background: radial-gradient(circle, rgba(161,46,255,1) 0%, rgba(24,39,217,1) 100%);
   border-radius: 50px;
 }
-.botones_log .log_in_boton:hover p{
+form .log_in_boton button:hover p{
   width: 50%;
   opacity: 1;
 }
@@ -179,8 +186,8 @@ input:focus{outline: none;}
 /*---------------------------------------------------*/
 table{
   margin: auto;
-  margin-bottom: 100px;
-  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
   text-transform: capitalize;
 }
 th{
@@ -207,19 +214,22 @@ td{
 }
 .admin_actions{
   width: 50%;
-  margin: auto;
-  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  margin:  0 auto;
+  padding: 3%;
 }
 .blue_button{
   background-color: #1C72FC;
   margin-left: 50px;
   color: #FFF;
   font-weight: 600;
-  font-size: 20pt;
+  font-size: 1.2rem;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 50%;
+  margin-bottom: .6rem;
 }
 .blue_button a, .purple_button a{
   display: flex;
@@ -241,10 +251,10 @@ td{
 .purple_button{
   background-color: #AD34EE;
   margin-left: 50px;
-  width:30%;
+  width:50%;
   color: #FFF;
   font-weight: 600;
-  font-size: 20pt;
+  font-size: 1.2rem;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -297,6 +307,9 @@ td{
   input:valid + .label .texto_input{
     transform: translateY(-100%);
   }
+  .admin_actions{
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 1500px) {
@@ -316,4 +329,5 @@ td{
   input:valid + .label .texto_input{
     transform: translateY(-100%);
   }
+  
 }
