@@ -1,153 +1,204 @@
-/* Hoja de estilos Index */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
 
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    overflow-x: hidden;
+font-family: 'Helvetica Neue', sans-serif;
+overflow: hidden;
+}
+
+section.hScroll {
+  height: 100vw;
+  width: 100vh;
+  padding: 5px;
+  background: #000;
+  overflow: hidden auto;
+  transform-origin: right top;
+  transform: rotate(-90deg) translateY(-100vh);
+}
+
+@keyframes out {
+  from{
+      opacity: 1;
+      scale: 100%;
   }
-  
-  /* Contenedor principal */
-  .scroll-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    overflow-y: hidden;
+
+  to{
+      opacity:0;
+      scale:25%;
   }
-  
-  /* Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #222;
-    color: #ff0066;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .navbar li {
-    margin: 10px 0;
-    position: relative;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 18px;
-    position: relative;
-  }
-  
-  .navbar a:hover::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: #ff0066;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  
-  /* Barra horizontal del navbar */
-  .navbar-line img {
-    width: 100%;
-    height: 2px;
-    background-color: #ff0066;
-  }
-  
-  /* Contenedor de secciones */
-  .sections-container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* Secciones */
-  .section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .section h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  /* Imagen de la empresa */
-  .company-image {
-    width: 70%;
-    overflow: hidden;
-    align-items: center;
-  }
-  
-  .company-image img {
-    width: 70%;
-    height: auto;
-    align-items: center;
-  }
-  
-  /* Barra de desplazamiento */
-  .scroll-bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 100%;
-    background-color: #222;
-    z-index: 1000;
-  }
-  
-  .scroll-bar img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Botón para volver al inicio */
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff0066;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .back-to-top:hover {
-    background-color: #d40052;
-  }
-  
-  /* Consulta de medios para dispositivos con un ancho de pantalla de 768px o más */
-  @media (min-width: 768px) {
-    .navbar ul {
-      flex-direction: row;
-      align-items: center;
-    }
-  
-    .navbar li {
-      margin: 0 20px;
-    }
-  }
-  
-  .navbar a.active,
-  .section.active h2 {
-    color: rgb(0, 255, 213);
-  }
-  
+}
+
+.hScroll_block:nth-child(1) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh);
+  top: 50px;
+  view-timeline-name: --box;
+  view-timeline-axis: block;
+  animation-timeline: --box;
+  animation-name: out;
+  animation-range-start: 70%;
+  animation-fill-mode: both;
+}
+
+.hScroll_block:nth-child(2) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh) translateX(-100vh) translateX(100vw);
+  top: 50px;
+}
+
+.hScroll_block:nth-child(3) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh) translateX(-200vh) translateX(200vw);
+  top: 50px;
+}
+
+.hScroll_block:nth-child(4) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh) translateX(-300vh) translateX(300vw);
+  top: 50px;
+}
+
+.hScroll_block:nth-child(5) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh) translateX(-400vh) translateX(400vw);
+  top: 50px;
+}
+.hScroll_block:nth-child(6) {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transform-origin: left top; 
+  transform: rotate(90deg) translateY(-100vh) translateX(-500vh) translateX(500vw);
+  top: 50px;
+}
+
+nav{
+  width: 100vw;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0nh 1nw;
+}
+
+.inpage{
+  width: 55vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hScroll_block{
+  margin: 0;
+}
+
+
+.hScroll_block:nth-child(1) .background {
+  background:#000;
+  display: flex;  
+  align-content: center;
+  justify-content: center;
+}  
+
+.hScroll_block:nth-child(2) .background {
+  background-image: linear-gradient(to left,#0022FF 2%, #02107E,#030531, #020219 , #000);
+}
+
+.hScroll_block:nth-child(3) .background {
+  background-image: linear-gradient(to right, #0022FF 2%, #000947);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hScroll_block:nth-child(4) .background {
+  background: #000947;
+}
+
+.hScroll_block:nth-child(5) .background {
+  background-image: linear-gradient(to right, #000947, #000);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.hScroll_block:nth-child(6) .background {
+  background: #000;
+}
+
+section.hScroll .hScroll_block .background{
+  position:absolute;
+  top:0; bottom: 0; right: 0;left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.inpage a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 5px 10px red, 0px -5px 10px red, 5px 0px 10px red, -5px 0px 10px red;
+  font-size: 18px;
+  position: relative;
+}
+
+.inpage a:hover::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ff0066;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.log a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 5px 10px red, 0px -5px 10px red, 5px 0px 10px red, -5px 0px 10px red;
+  font-size: 18px;
+  position: relative;
+}
+
+.log a:hover::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #ff0066;
+  position: absolute;
+  bottom: 0;
+    left: 0;
+}
+
+.carousel-image {
+  max-width: 50%; /* El ancho máximo será el 100% del contenedor */
+  max-height: 50%; /* La altura máxima será el 100% del contenedor */
+}

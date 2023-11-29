@@ -5,11 +5,12 @@ import Index from './componentes/Index'
 import Proyectos from './componentes/Proyectos';
 
 
+
 function App() {
   return (
     <div className="App">
-      {/* <Index /> */}
-      <Proyectos />
+      <Index />
+      {/* <Proyectos /> */}
     </div>
   );
 }

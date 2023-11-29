@@ -1,10 +1,10 @@
+// // Proyectos.js
 // Proyectos.js
 
 import React, { useState } from "react";
 import '../css/Proyectos.css';
 
 const Proyectos = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [nuevaCaja, setNuevaCaja] = useState({ nombre: "", progreso: 0, integrantes: [] });
   const [proyectos, setProyectos] = useState([
@@ -22,10 +22,6 @@ const Proyectos = () => {
     "Estudiante 5",
     "Estudiante 6",
   ];
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   const toggleForm = () => {
     setShowForm(!showForm);
@@ -103,20 +99,10 @@ const Proyectos = () => {
   return (
     <div className="container">
       <div className="header" style={{ backgroundColor: "#000", padding: "0 20px" }}>
-        <div className="menu-icon" onClick={toggleMenu}>
-          Menu
+        <div className="regresar" onClick={() => window.location.reload()}>
+          Regresar
         </div>
         <div className="titulo">MIS PROYECTOS</div>
-        <div className="user-icon">
-          Usuario
-        </div>
-      </div>
-      <div className={`menu ${menuOpen ? "open" : ""}`}>
-        <ul>
-          <li>Inicio</li>
-          <li>Acerca de</li>
-          <li>Contacto</li>
-        </ul>
       </div>
       <div className="proyectos">
         {proyectos.map((proyecto) => (
@@ -213,8 +199,6 @@ const Proyectos = () => {
 };
 
 export default Proyectos;
-
-
 
 // import React, { useState } from "react";
 // import '../css/Proyectos.css';
@@ -349,10 +333,10 @@ export default Proyectos;
 //                 style={{ width: `${proyecto.progreso}%` }}
 //               ></div>
 //             </div>
-//             <div className="integrantes">
-//               <strong>Integrantes:</strong> {proyecto.integrantes.join(", ")}
-//             </div>
 //             <div className="info-hover">
+//               <div className="integrantes">
+//                 <strong>Integrantes:</strong> {proyecto.integrantes.join(", ")}
+//               </div>
 //               <div className="botones">
 //                 <button className="editar" onClick={() => editarProyecto(proyecto.id)}>
 //                   Editar
@@ -364,19 +348,24 @@ export default Proyectos;
 //             </div>
 //             {editingProject === proyecto.id && (
 //               <div className="form editar-form">
+//                 <button className="cerrar" onClick={() => setEditingProject(null)}>
+//                   X
+//                 </button>
 //                 <label htmlFor={`nombre-${proyecto.id}`}>Nombre:</label>
 //                 <input
 //                   type="text"
 //                   id={`nombre-${proyecto.id}`}
 //                   name="nombre"
-//                   defaultValue={proyecto.nombre}
+//                   value={nuevaCaja.nombre}
+//                   onChange={handleInputChange}
 //                 />
 //                 <label htmlFor={`progreso-${proyecto.id}`}>Progreso (%):</label>
 //                 <input
 //                   type="number"
 //                   id={`progreso-${proyecto.id}`}
 //                   name="progreso"
-//                   defaultValue={proyecto.progreso}
+//                   value={nuevaCaja.progreso}
+//                   onChange={handleInputChange}
 //                 />
 //                 <label>Integrantes:</label>
 //                 {renderCheckboxes()}
@@ -394,6 +383,9 @@ export default Proyectos;
 //       {showForm && (
 //         <div className="form-container">
 //           <div className="form">
+//             <button className="cerrar" onClick={toggleForm}>
+//               X
+//             </button>
 //             <label htmlFor="nombre">Nombre:</label>
 //             <input
 //               type="text"
@@ -421,6 +413,9 @@ export default Proyectos;
 // };
 
 // export default Proyectos;
+
+
+
 
 
 
